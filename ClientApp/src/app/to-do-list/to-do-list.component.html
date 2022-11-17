@@ -1,0 +1,10 @@
+<app-create-item></app-create-item>
+<hr>
+<div *ngFor="let t of todos">
+    <span style="display:inline-flex">
+        <p>{{t.description}} /</p>
+        <p *ngIf="t.isCompleted;else notDone">/ Done</p>
+        <ng-template #notDone><p>/ Incomplete</p></ng-template>
+    </span>
+    <br>
+</div>
